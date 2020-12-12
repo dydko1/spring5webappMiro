@@ -1,13 +1,13 @@
 spring:
-  #  thymeleaf: # Thymeleaf
-  #    cache: false
-  #    mode: HTML
-  #    encoding: UTF-8
-  #    prefix: file:src/main/resources/templates/
-  #  resources: # Static resources
-  #    static-locations: file:src/main/resources/static/
-  #    cache:
-  #      period: 0
+  thymeleaf: # Thymeleaf
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+    prefix: file:src/main/resources/templates/
+  resources: # Static resources
+    static-locations: file:src/main/resources/static/
+    cache:
+      period: 0
 
   # JPA
   # spring.jpa.hibernate.ddl-auto=update
@@ -22,12 +22,12 @@ spring:
 
   # Datasource
   datasource:
-    #url: jdbc:h2:file:~/test
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:file:~/test
+    #url: jdbc:h2:mem:testdb
     username: sa
     password:
     driver-class-name: org.h2.Driver
 
-  devtools:
-    livereload:
-      enabled:true
+#  devtools:
+#    livereload:
+#      enabled: true
