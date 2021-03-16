@@ -1,5 +1,8 @@
 package guru.springframework.spring5webapp.storage;
 
+import org.springframework.core.io.Resource;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -28,6 +31,15 @@ public class FileSystemStorageService implements StorageService {
     }
 
     @Override
+    public void init() {
+        try {
+            Files.createDirectories(rootLocation);
+        } catch (IOException e) {
+            throw new StorageException("Could not initialize storage", e);
+        }
+    }
+
+    @Override
     public void store(MultipartFile file) {
         try {
             if (file.isEmpty()) {
@@ -47,6 +59,7 @@ public class FileSystemStorageService implements StorageService {
             }
         } catch (IOException e) {
             throw new StorageException("Failed to store file.", e);
+
         }
     }
 
@@ -59,7 +72,6 @@ public class FileSystemStorageService implements StorageService {
         } catch (IOException e) {
             throw new StorageException("Failed to read stored files", e);
         }
-
     }
 
     @Override
@@ -87,14 +99,5 @@ public class FileSystemStorageService implements StorageService {
     @Override
     public void deleteAll() {
         FileSystemUtils.deleteRecursively(rootLocation.toFile());
-    }
-
-    @Override
-    public void init() {
-        try {
-            Files.createDirectories(rootLocation);
-        } catch (IOException e) {
-            throw new StorageException("Could not initialize storage", e);
-        }
     }
 }
