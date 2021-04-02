@@ -14,7 +14,8 @@ import org.springframework.context.annotation.Bean;
 public class Spring5webappApplication {
 
 	public static void main(String[] args) {
-		//ConfigurableApplicationContext context
-		SpringApplication.run(Spring5webappApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(Spring5webappApplication.class, args);
+		Customers c = context.getBean(Customers.class);
+		c.display();
 	}
 }
