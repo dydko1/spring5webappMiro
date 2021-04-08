@@ -9,9 +9,9 @@
 <body>
 	<h2 class="hello-title">Hello ${name}!</h2>
 	<form method="post" action="details">
-		Enter customer ID: <input type="text" name="cid"><br>
-		Enter customer Name: <input type="text" name="cname"><br>
-		Enter customer email address: <input type="text" name="cemail"><br>
+		Enter customer ID: <input type="text" name="cid">
+		Enter customer Name: <input type="text" name="cname">	
+		Enter customer email address: <input type="text" name="cemail">
 		<input type="submit" value="Submit">
 	</form>
 </body>

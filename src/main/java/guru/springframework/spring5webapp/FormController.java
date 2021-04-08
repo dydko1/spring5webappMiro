@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class FormController {
-	@RequestMapping("/edureka")
+	@RequestMapping("edureka")
 	public String edureka() {
 		return "edureka";
 	}
 
-	@PostMapping("/details")
-	public String viewdetails(@RequestParam("cid") String cid, @RequestParam("cname") String cname,
+	@PostMapping("details")
+	public String viewdetails(@RequestParam("cid") int cid, @RequestParam("cname") String cname,
 			@RequestParam("cemail") String cemail, ModelMap modelMap) {
 		modelMap.put("cid",cid);
 		modelMap.put("cname", cname);
