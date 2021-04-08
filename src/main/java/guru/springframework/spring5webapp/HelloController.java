@@ -1,4 +1,5 @@
 package guru.springframework.spring5webapp;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,21 +14,21 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class HelloController {
 
-    @GetMapping({"/test12", "/hello"})
-    public String hello(@RequestParam(value = "name", defaultValue = "World", required = true) String name, Model model) {
-        model.addAttribute("name", name);
-        return "hello";
-    }
+	@GetMapping({ "/hellocopy", "/hello" })
+	public String hello(@RequestParam(value = "name", defaultValue = "World", required = true) String name,
+			Model model) {
+		model.addAttribute("name", name);
+		return "hello";
+	}
 
-    @RequestMapping("courses")
-    public ModelAndView courses(@RequestParam("cname") String coursename)
-    {
-        //String cname= req.getParameter("cname");
-        System.out.println("The course name is: " + coursename);
-        //session.setAttribute("cname",coursename);
-        ModelAndView mv =new ModelAndView();
-        mv.addObject("cname", coursename);
-        mv.setViewName("course");
-        return mv;
-    }
+	@RequestMapping("courses")
+	public ModelAndView courses(@RequestParam("cname") String coursename) {
+		// String cname= req.getParameter("cname");
+		System.out.println("The course name is: " + coursename);
+		// session.setAttribute("cname",coursename);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("cname", coursename);
+		mv.setViewName("course");
+		return mv;
+	}
 }
