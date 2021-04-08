@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class HelloController {
 
-    @GetMapping({"/", "/hello"})
+    @GetMapping({"/test12", "/hello"})
     public String hello(@RequestParam(value = "name", defaultValue = "World", required = true) String name, Model model) {
         model.addAttribute("name", name);
         return "hello";
