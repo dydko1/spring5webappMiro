@@ -32,20 +32,18 @@ public class FormController {
 
 	@PostMapping("/getdetails")
 	public ModelAndView getdetails(@RequestParam Long cid) {
-		ModelAndView mv =new ModelAndView("Retrive");
-		Customers customers =repo.findById(cid).orElse(null);
+		ModelAndView mv = new ModelAndView("Retrive");
+		Customers customers = repo.findById(cid).orElse(null);
 		mv.addObject(customers);
 		return mv;
 	}
 
 	/*
-	@PostMapping("details")
-	public String viewdetails(@RequestParam("cid") int cid, @RequestParam("cname") String cname,
-			@RequestParam("cemail") String cemail, ModelMap modelMap) {
-		modelMap.put("cid", cid);
-		modelMap.put("cname", cname);
-		modelMap.put("cemail", cemail);
-		return "ViewCustomers";
-	}
-	*/
+	 * @PostMapping("details") public String viewdetails(@RequestParam("cid") int
+	 * cid, @RequestParam("cname") String cname,
+	 * 
+	 * @RequestParam("cemail") String cemail, ModelMap modelMap) {
+	 * modelMap.put("cid", cid); modelMap.put("cname", cname);
+	 * modelMap.put("cemail", cemail); return "ViewCustomers"; }
+	 */
 }

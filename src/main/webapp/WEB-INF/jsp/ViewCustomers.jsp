@@ -7,10 +7,10 @@
 <title>Welcome Miro!!</title>
 </head>
 <body>
-	<h1 class="hello-title">View Customer Details</h1>
-	<h2>Details as submitted as follows:</h2>
-	<h4>Customer ID: ${cid}</h4>
-	<h4>Customers Name: ${cname}</h4>
-	<h4>Customer email address: ${cemail}</h4>
+	<h1 class="hello-title">View Customer GetDetails</h1>
+	<form action="getdetails" method="post">
+		<input type="number" name="cid">
+		<input type="submit" value="Submit">
+	</form>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Retrieve Customer Details</h1>
-<h2>Details as submitted as follows: </h2>
-<h5> ${Customers}</h5>
+	<h1>Retrieve Customer Details</h1>
+	<h2>Details as submitted as follows:</h2>
+	<h5>${customers}</h5>
+	<br>
+	<h4>Miro</h4>
 </body>
 </html>
