@@ -1,16 +1,27 @@
-package guru.springframework.spring5webapp;
+package guru.springframework.spring5webapp.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import guru.springframework.spring5webapp.dao.PlanetDAO;
+
 @Controller
-public class Servlet {
+public class HelloWorldM {
 	@GetMapping("helloworldM")
 	public String helloworldM(Model model) {
-		// add some attributes using model
+///
 		return "helloM";
+	}
+
+	private void addPlanets() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@GetMapping("helloworldMV1")
