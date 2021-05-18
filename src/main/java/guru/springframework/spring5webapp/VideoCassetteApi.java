@@ -17,13 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class VideoCassetteApi {
-
 	private List<VideoCassette> videoCassettes;
 
 	public VideoCassetteApi() {
-		videoCassettes = new ArrayList<>();
-		videoCassettes.add(new VideoCassette(1L, "Titanic1", LocalDate.of(1995, 01, 02)));
-		videoCassettes.add(new VideoCassette(2L, "Titanic2", LocalDate.of(1996, 01, 02)));
+		videoCassettes = new ArrayList<VideoCassette>();
+		videoCassettes.add(new VideoCassette(1L, "Titanic2", LocalDate.of(1995, 1, 5)));
+		videoCassettes.add(new VideoCassette(2L, "Pulp fiction2", LocalDate.of(2001, 2, 5)));
 	}
 
 	@GetMapping("/all")
@@ -32,8 +31,8 @@ public class VideoCassetteApi {
 	}
 
 	@GetMapping
-	public VideoCassette getById(@RequestParam Long index) {
-		Optional<VideoCassette> first = videoCassettes.stream().filter(element -> element.getId() == index).findFirst();
+	public VideoCassette getById(@RequestParam int index) {
+		Optional<VideoCassette> first = videoCassettes.stream().filter(ele -> ele.getId() == index).findFirst();
 		return first.get();
 	}
 
@@ -48,7 +47,7 @@ public class VideoCassetteApi {
 	}
 
 	@DeleteMapping
-	public boolean deleteVideo(@RequestParam Long index) {
-		return videoCassettes.removeIf(element -> element.getId() == index);
+	public Boolean deleteVideo(@RequestParam int index) {
+		return videoCassettes.removeIf(ele->ele.getId()==index);
 	}
 }
