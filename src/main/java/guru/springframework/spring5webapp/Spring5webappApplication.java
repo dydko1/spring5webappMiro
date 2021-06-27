@@ -36,24 +36,36 @@ public class Spring5webappApplication implements CommandLineRunner {
 		User user = new User("Rajeev", "Singh", "rajeev@callicoder.com",
 				"MY_SUPER_SECRET_PASSWORD");
 
+		User user2 = new User("Rajeev", "Singh", "rajeev@callicoder2.com",
+				"MY_SUPER_SECRET_PASSWORD2");
+
 		Calendar dateOfBirth = Calendar.getInstance();
 		dateOfBirth.set(1992, 7, 21);
+
+		Calendar dateOfBirth2 = Calendar.getInstance();
+		dateOfBirth2.set(2000, 7, 21);
 
 		// Create a UserProfile instance
 		UserProfile userProfile = new UserProfile("+91-8197882053", Gender.MALE, dateOfBirth.getTime(),
 				"747", "2nd Cross", "Golf View Road, Kodihalli", "Bangalore",
 				"Karnataka", "India", "560008");
 
+		UserProfile userProfile2 = new UserProfile("+91-8197882053", Gender.MALE, dateOfBirth.getTime(),
+				"747", "2nd Cross", "Golf View Road, Kodihalli", "Bangalore",
+				"Karnataka", "India", "560009");
 
 		// Set child reference(userProfile) in parent entity(user)
 		user.setUserProfile(userProfile);
+		user2.setUserProfile(userProfile2);
 
 		// Set parent reference(user) in child entity(userProfile)
 		userProfile.setUser(user);
+		userProfile2.setUser(user2);
 
 		// Save Parent Reference (which will save the child as well)
 		userRepository.save(user);
-		
+		userRepository.save(user2);
+
 		//=========================================
 	}
 }
