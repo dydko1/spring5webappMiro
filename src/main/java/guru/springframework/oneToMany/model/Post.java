@@ -27,6 +27,12 @@ public class Post extends AuditModel {
     public Post() {
     }
 
+    public Post(String title, String description, String content) {
+        this.title = title;
+        this.description = description;
+        this.content = content;
+    }
+
     public Long getId() {
         return id;
     }
@@ -58,8 +64,4 @@ public class Post extends AuditModel {
     public void setContent(String content) {
         this.content = content;
     }
-
-
-
-    // Getters and Setters (Omitted for brevity)
 }

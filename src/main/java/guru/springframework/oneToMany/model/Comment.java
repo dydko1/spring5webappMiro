@@ -30,6 +30,10 @@ public class Comment extends AuditModel {
     public Comment() {
     }
 
+    public Comment(String text) {
+        this.text = text;
+    }
+
     public Long getId() {
         return id;
     }
