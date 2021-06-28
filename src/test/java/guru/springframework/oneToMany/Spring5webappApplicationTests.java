@@ -1,4 +1,4 @@
-package guru.springframework.spring5webapp;
+package guru.springframework.oneToMany;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
