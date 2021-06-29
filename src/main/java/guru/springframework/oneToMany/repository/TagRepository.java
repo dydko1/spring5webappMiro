@@ -1,7 +1,6 @@
 package guru.springframework.oneToMany.repository;
 
-
-import guru.springframework.oneToMany.model.Post;
+import guru.springframework.oneToMany.model.Tag;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,6 +8,6 @@ import org.springframework.stereotype.Repository;
  * Created by rajeevkumarsingh on 22/11/17.
  */
 @Repository
-public interface PostRepository extends JpaRepository<Post, Long> {
+public interface TagRepository extends JpaRepository<Tag, Long> {
 
 }
