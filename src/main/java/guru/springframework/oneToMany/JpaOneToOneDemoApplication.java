@@ -2,7 +2,6 @@ package guru.springframework.oneToMany;
 
 import guru.springframework.oneToMany.model.Address;
 import guru.springframework.oneToMany.model.User;
-import guru.springframework.oneToMany.repository.AddressRepository;
 import guru.springframework.oneToMany.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,10 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class JpaOneToManyDemoApplication {
+public class JpaOneToOneDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JpaOneToManyDemoApplication.class, args);
+		SpringApplication.run(JpaOneToOneDemoApplication.class, args);
 	}
 
 	@Bean
