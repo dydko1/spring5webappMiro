@@ -17,8 +17,7 @@ public class JpaOneToManyDemoApplication {
 	}
 
 	@Bean
-	public CommandLineRunner mappingDemo(UserRepository userRepository,
-										 AddressRepository addressRepository) {
+	public CommandLineRunner mappingDemo(UserRepository userRepository) {
 		return args -> {
 
 			// create a user instance
