@@ -16,8 +16,8 @@ public class DogsOwnController {
     DogsOwnService service;
 //public List<Dog> getDogs(@PathVariable(required = true) String name)
 
-    @GetMapping("/{name}")
-    public List<Dog> getDogs(@PathVariable(required = true) String name) {
+    @GetMapping()
+    public List<Dog> getDogs(@RequestParam String name) {
         return service.getDogs(name);
     }
 
