@@ -1,7 +1,7 @@
 package guru.springframework.oneToMany.controller;
 
 import guru.springframework.oneToMany.model.DogDto;
-import guru.springframework.oneToMany.repository.Dog;
+import guru.springframework.oneToMany.model.Dog;
 import guru.springframework.oneToMany.service.DogsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package guru.springframework.oneToMany.repository;
+package guru.springframework.oneToMany.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -2,7 +2,7 @@ package guru.springframework.oneToMany.service;
 
 import guru.springframework.oneToMany.exception.DogNotFoundException;
 import guru.springframework.oneToMany.model.DogDto;
-import guru.springframework.oneToMany.repository.Dog;
+import guru.springframework.oneToMany.model.Dog;
 import guru.springframework.oneToMany.repository.DogsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
