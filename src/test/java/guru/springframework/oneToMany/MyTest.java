@@ -93,9 +93,45 @@ public class MyTest {
         while (m.find()) {
             System.out.println("matches1:\t" + m.group());
         }
+    }
+
+    @Test
+    public void regexDemo2() {
+        Pattern p = Pattern.compile("[^\\d]*[\\d]+[^\\d]+([\\d]+)");
+        Matcher m = p.matcher("string(1234)more567string890");
 
         while (m.find()) {
-            System.out.println("matches2:\t" + m.group());
+            System.out.println("matches:\t" + m.group(1));
+        }
+    }
+
+    @Test
+    public void regexDemo3() {
+        Pattern pattern = Pattern.compile("numFound=\"([0-9]+)\"");
+        Matcher matcher = pattern.matcher("<result name=\"response\" numFound=\"9999\" start=\"0\">");
+
+        if (matcher.find()) {
+            System.out.println(matcher.group(1));
+        }
+    }
+
+    @Test
+    public void regexDemo4() {
+        Pattern pattern = Pattern.compile("YOUR SET ADDRESS IS\\s+([A-Z0-9]{6})");
+        Matcher matcher = pattern.matcher("YOUR SET ADDRESS IS 6B1BC0 TEXT");
+
+        if (matcher.find()) {
+            System.out.println(matcher.group(1));
+        }
+    }
+
+    @Test
+    public void regexDemo5() {
+        String s = "bookname=cooking&bookid=123456&bookprice=123.45";
+        Pattern p = Pattern.compile("(?<=bookid=)\\d+");
+        Matcher m = p.matcher(s);
+        if (m.find()) {
+            System.out.println(m.group());
         }
     }
 }
