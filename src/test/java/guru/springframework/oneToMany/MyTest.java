@@ -60,17 +60,42 @@ public class MyTest {
     }
 
     @Test
-    public void simaplePattern() {
-        //Pattern p = Pattern.compile("^([a-zA-Z]+)([0-9]+)(.*)");
-        Pattern p = Pattern.compile("kr?at");
-        Matcher m = p.matcher("kat");
-        //System.out.println(pattern.matcher("krat"));
-        if (m.find()) {
-            System.out.println("Group found:\t" + m.group(0)); // whole matched expression
+    public void simplePattern() {
+        Pattern p = Pattern.compile("Java"); //, Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher("Welcome to Java tutorial");
+
+        boolean bfound = m.find();
+        if (bfound) {
+            System.out.println("Pattern found");
+            System.out.println("Group found:\t" + m.group(0));
+        } else
+            System.out.println("Pattern not found");
+    }
+
+    @Test
+    public void secondAPattern() {
+        Pattern p = Pattern.compile("..\\(....");
+        Matcher m = p.matcher("java jX(jajcoooo");
+
+        boolean bfound = m.find();
+        if (bfound) {
+            System.out.println("Pattern found");
+            System.out.println("Group found:\t" + m.group(0));
+        } else
+            System.out.println("Pattern not found");
+    }
+
+    @Test
+    public void regexDemo1() {
+        Pattern p = Pattern.compile("\\d+");
+        Matcher m = p.matcher("string(1234)more567string890");
+
+        while (m.find()) {
+            System.out.println("matches1:\t" + m.group());
         }
-        m = p.matcher("kot");
-        if (m.find()) {
-            System.out.println("Group found:\t" + m.group(0)); // whole matched expression
+
+        while (m.find()) {
+            System.out.println("matches2:\t" + m.group());
         }
     }
 }
