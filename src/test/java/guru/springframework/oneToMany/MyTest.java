@@ -152,8 +152,8 @@ public class MyTest {
         //Pattern p = Pattern.compile("([\\d]+)");
         //Pattern p = Pattern.compile("\\[.*?\\]");
         //Pattern p = Pattern.compile("(?<=\\()\\([\\d]+\\)(?=\\))");
-        // https://newbedev.com/regular-expression-to-extract-text-between-square-brackets
         // Regular expression to extract text between brackets
+        // https://newbedev.com/regular-expression-to-extract-text-between-square-brackets
         //Pattern p = Pattern.compile("(?<=\\()\\d+(?=\\))"); // the same
         Pattern p = Pattern.compile("(?<=\\()[\\d]+(?=\\))"); // the same with []
         Matcher m = p.matcher(s);
