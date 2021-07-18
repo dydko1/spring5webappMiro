@@ -91,7 +91,7 @@ public class MyTest {
         Matcher m = p.matcher("string(1234)more567string890");
 
         while (m.find()) {
-            System.out.println("matches1:\t" + m.group());
+            System.out.println("matches:\t" + m.group());
         }
     }
 
@@ -130,7 +130,34 @@ public class MyTest {
         String s = "bookname=cooking&bookid=123456&bookprice=123.45";
         Pattern p = Pattern.compile("(?<=bookid=)\\d+");
         Matcher m = p.matcher(s);
-        if (m.find()) {
+        while (m.find()) {
+            System.out.println(m.group());
+        }
+    }
+
+    @Test
+    public void regexDemo6() {
+        String s = "Java i Java aakkdaa2(152)6fsj[aakkf]sdjk";
+        //Pattern p = Pattern.compile("([\\d]+)");
+        Pattern p = Pattern.compile("(?=\\()[^)]+(?=\\))");
+        Matcher m = p.matcher(s);
+        while (m.find()) {
+            System.out.println(m.group());
+        }
+    }
+
+    @Test
+    public void regexDemo7() {
+        String s = "Java i Java aakkdaa2(1527)6fsj[65]sd[jhjhj]jk";
+        //Pattern p = Pattern.compile("([\\d]+)");
+        //Pattern p = Pattern.compile("\\[.*?\\]");
+        //Pattern p = Pattern.compile("(?<=\\()\\([\\d]+\\)(?=\\))");
+        // https://newbedev.com/regular-expression-to-extract-text-between-square-brackets
+        // Regular expression to extract text between brackets
+        //Pattern p = Pattern.compile("(?<=\\()\\d+(?=\\))"); // the same
+        Pattern p = Pattern.compile("(?<=\\()[\\d]+(?=\\))"); // the same with []
+        Matcher m = p.matcher(s);
+        while (m.find()) {
             System.out.println(m.group());
         }
     }
